@@ -69,6 +69,13 @@ export default class Web {
                   return res
                 })
   }
+  LoginAuthboss(args) {
+    return this.makeCall('Login0', args)
+                .then(res => {
+                  localStorage.token = `${res.token}`
+                  return res
+                })
+  }
   Logout() {
     delete(localStorage.token)
   }

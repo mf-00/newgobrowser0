@@ -1,0 +1,10 @@
+node_modules
+bower_components
+.DS_Store
+.idea
+Thumbs.db
+/dev
+/production
+*~
+*.log
+.idea
