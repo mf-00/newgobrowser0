@@ -78,7 +78,7 @@ ReactDOM.render((
       <Route path='/' component={App}>
         <Route path='minio' component={App}>
           <IndexRoute component={Browse} onEnter={authNeeded} />
-          <Route path='login' component={LoginAuthboss} onEnter={authNotNeeded} />
+          <Route path='login' component={Login} onEnter={authNotNeeded} />
           <Route path=':bucket' component={Browse} onEnter={authNeeded} />
           <Route path=':bucket/*' component={Browse} onEnter={authNeeded} />
         </Route>
