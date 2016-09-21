@@ -235,7 +235,7 @@ export default class Browse extends React.Component {
         const { web } = this.props
         e.preventDefault()
         web.Logout()
-        browserHistory.push(`${minioBrowserPrefix}/login`)
+        browserHistory.push(`/auth/logout`)
     }
 
     landingPage(e) {
@@ -368,19 +368,10 @@ export default class Browse extends React.Component {
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className="dm-right">
                                         <li>
-                                            <a target="_blank" href="https://github.com/minio/miniobrowser">Github <i className="fa fa-github"></i></a>
-                                        </li>
-                                        <li>
                                             <a href="" onClick={this.fullScreen.bind(this)}>Fullscreen <i className="fa fa-expand"></i></a>
                                         </li>
                                         <li>
-                                            <a target="_blank" href="https://gitter.im/minio/minio">Ask for help <i className="fa fa-question-circle"></i></a>
-                                        </li>
-                                        <li>
                                             <a href="" onClick={this.showAbout.bind(this)}>About <i className="fa fa-info-circle"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="" onClick={this.showSettings.bind(this)}>Settings <i className="fa fa-cog"></i></a>
                                         </li>
                                         <li>
                                             <a href="" onClick={this.logout.bind(this)}>Sign Out <i className="fa fa-sign-out"></i></a>
