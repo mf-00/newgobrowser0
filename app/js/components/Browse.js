@@ -235,7 +235,8 @@ export default class Browse extends React.Component {
         const { web } = this.props
         e.preventDefault()
         web.Logout()
-        browserHistory.push(`/auth/logout`)
+        window.location.replace(`/auth/logout`)
+        //browserHistory.push(`/auth/logout`)
     }
 
     landingPage(e) {
