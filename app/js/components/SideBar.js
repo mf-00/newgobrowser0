@@ -42,7 +42,7 @@ let SideBar = ({ visibleBuckets, loadBucket, currentBucket, selectBucket, search
                 <div className="fes-header clearfix hidden-sm hidden-xs">
                     <a href="" onClick={landingPage}>
                         <img src={logo} alt=""/>
-                        <h2 className="fe-h2">Minio Browser</h2>
+                        <h2 className="fe-h2">Newgo Browser</h2>
                     </a>
                 </div>
 
