@@ -191,6 +191,16 @@ export default class Browse extends React.Component {
         dispatch(actions.uploadFile(file, this.xhr))
     }
 
+    removeFile(e) {
+      e.preventDefault()
+      const {dispatch, objects} = this.props
+      if (objects.length) {
+        this.removeObject(e, objects[0])
+      } else {
+        dispatch(actions.showAlert({type: 'danger', message: 'No file to remove!'}))
+      }
+    }
+
     removeObject(e, object) {
       const { web, dispatch, currentBucket, currentPath } = this.props
       web.RemoveObject({
@@ -317,6 +327,7 @@ export default class Browse extends React.Component {
 
         let signoutTooltip = <Tooltip id="tt-sign-out">Sign out</Tooltip>
         let uploadTooltip = <Tooltip id="tt-upload-file">Upload file</Tooltip>
+        let removeTooltip = <Tooltip id="tt-remove-file">Remove file</Tooltip>
         let makeBucketTooltip = <Tooltip id="tt-create-bucket">Create bucket</Tooltip>
 
         let used = total - free
@@ -431,6 +442,15 @@ export default class Browse extends React.Component {
                                            id="file-input"></input>
                                     <label htmlFor="file-input">
                                         <i style={{cursor:'pointer'}} className="fa fa-cloud-upload"></i>
+                                    </label>
+                                </a>
+                            </OverlayTrigger>
+                            <OverlayTrigger placement="left" overlay={removeTooltip}>
+                                <a href="#" className="feba-btn feba-remove">
+                                    <input type="button" onClick={this.removeFile.bind(this)} style={{display:'none'}}
+                                           id="file-remove"></input>
+                                    <label htmlFor="file-remove">
+                                        <i className="fa fa-remove"></i>
                                     </label>
                                 </a>
                             </OverlayTrigger>
